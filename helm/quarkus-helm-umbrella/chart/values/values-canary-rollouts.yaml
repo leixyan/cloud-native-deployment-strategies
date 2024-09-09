@@ -22,13 +22,13 @@ discounts-blue:
         web: true
         service: "discounts-umbrella-online"
       canary:
-        canaryService: discounts-umbrella-canary-service 
-        stableService: discounts-umbrella-stable-service 
+        canaryService: discounts-umbrella-online-canary-service 
+        stableService: discounts-umbrella-online-stable-service 
         trafficRouting:
           plugins:
             argoproj-labs/openshift:
               routes:
-                - discounts-umbrella-route
+                - discounts-umbrella-online-route
         steps:
           - setWeight: 50
           - pause:
@@ -49,13 +49,13 @@ products-blue:
         web: true
         service: "products-umbrella-online"
       canary:
-        canaryService: products-umbrella-canary-service 
-        stableService: products-umbrella-stable-service 
+        canaryService: products-umbrella-online-canary-service 
+        stableService: products-umbrella-online-stable-service 
         trafficRouting:
           plugins:
             argoproj-labs/openshift:
               routes:
-                - products-umbrella-route
+                - products-umbrella-online-route
         steps:
           - setWeight: 10
           - pause:
